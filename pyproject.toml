@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "indicrt"
+version = "0.1.0"
+description = "Red-team LLM apps in Indian languages: harmful, over-refusal, injection and romanized-script tests in 12 languages."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+dependencies = ["aksharamukha>=2.1"]
+keywords = ["llm", "red-teaming", "ai-safety", "indic", "hindi", "multilingual", "jailbreak", "prompt-injection", "garak", "promptfoo"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Security",
+  "Natural Language :: Hindi",
+  "Natural Language :: Bengali",
+  "Natural Language :: Tamil",
+  "Natural Language :: Telugu",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+indicrt = "indicrt.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["indicrt*"]
